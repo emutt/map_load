@@ -1,0 +1,10 @@
+---
+  - name: Add jgottlieb
+    action: user name=jgottlieb password=reverse
+
+  - name: set the proper hostname
+    hostname: name={{inventory_hostname}}
+
+  - name: Create /etc/hosts file
+    template: src="hosts.j2" dest="/etc/hosts"
+

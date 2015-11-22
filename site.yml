@@ -1,0 +1,14 @@
+---
+- hosts: clients
+  roles:
+    - client
+
+- hosts: controllers
+  roles:
+    - controller
+
+- hosts: queues
+  roles:
+    - queue
+
+

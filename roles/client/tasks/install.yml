@@ -1,0 +1,12 @@
+---
+  - name: Update apt cache
+    apt: update_cache=yes cache_valid_time=5400
+
+  - name: Add pip
+    apt: name=python-pip 
+
+  - name: Add python scapy
+    pip: name=scapy
+
+  - name: Add py2-ipaddress
+    pip: name=py2-ipaddress
