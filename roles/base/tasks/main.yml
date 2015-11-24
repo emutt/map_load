@@ -8,3 +8,18 @@
   - name: Create /etc/hosts file
     template: src="hosts.j2" dest="/etc/hosts"
 
+  - name: Create .pip directory in Vagrant home dir
+    file: path=/home/vagrant/.pip state=directory mode=755
+
+  - name: Create .pip directory in root home dir
+    file: path=/root/.pip state=directory mode=755
+
+  - name: Copy pip.conf to Vagrant home dir .pip
+    copy: src=pip.conf dest=/home/vagrant/.pip/pip.conf
+
+  - name: Copy pip.conf to Vagrant home dir .pip
+    copy: src=pip.conf dest=/root/.pip/pip.conf
+
+  - name: Copy Charter root cert to /etc/ssl/certs
+    copy: src=CHTREnterpriseRootCA.pem dest={{charterroot}}
+

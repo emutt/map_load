@@ -6,7 +6,7 @@
     apt: name=python-pip 
 
   - name: Add python scapy
-    pip: name=scapy
+    pip: name=scapy 
 
   - name: Add py2-ipaddress
     pip: name=py2-ipaddress
